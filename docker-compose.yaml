@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  traffic-flow-sync:
+    build: .
+    container_name: traffic-flow-sync
+    environment:
+      - DOWNLOAD_INTERVAL=2
+      - MAX_WORKERS=3
+      - REPEAT_COUNT=
+      - MAX_SPEED_KBPS=0
+      - PER_DOWNLOAD_SPEED_KBPS=0
+      - MAX_MEMORY_MB=100
+      - CHUNK_SIZE=8192
+    volumes:
+      - ./urls.txt:/app/urls.txt:ro
+    restart: unless-stopped
+    mem_limit: 200m
+    mem_reservation: 100m
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  traffic-flow-async:
+    build: .
+    container_name: traffic-flow-async
+    command: ["python", "download_async.py"]
+    environment:
+      - DOWNLOAD_INTERVAL=1
+      - REPEAT_COUNT=
+      - MAX_SPEED_KBPS=0
+      - PER_DOWNLOAD_SPEED_KBPS=0
+      - MAX_MEMORY_MB=100
+      - CHUNK_SIZE=8192
+    volumes:
+      - ./urls.txt:/app/urls.txt:ro
+    restart: unless-stopped
+    mem_limit: 200m
+    mem_reservation: 100m
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

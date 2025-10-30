@@ -1,0 +1,14 @@
+# TrafficFlow - URL列表
+# 将这些URL替换为您需要测试的实际文件URL
+
+# 测试文件 (用于验证)
+https://speed.cloudflare.com/__down?during=download&bytes=104857600
+https://dldir1.qq.com/qqfile/qq/PCQQ9.7.17/QQ9.7.17.29225.exe
+https://mirrors.huaweicloud.com/ubuntu-releases/bionic/ubuntu-18.04.6-desktop-amd64.iso
+https://mirrors.nju.edu.cn/ubuntu-cdimage/releases/jammy/release/ubuntu-22.04.5-live-server-arm64.iso
+
+
+# 实际使用示例：
+# https://example.com/large-file.zip
+# https://example.com/backup.tar.gz
+# https://cdn.example.com/video.mp4
