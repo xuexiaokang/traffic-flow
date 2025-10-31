@@ -34,7 +34,7 @@ traffic-flow/
 mkdir traffic-flow
 cd traffic-flow
 
-## 环境变量配置速查
+### 环境变量配置速查
 |配置项	|环境变量	|示例值	|说明|
 |-------|-------|-------|-------|
 |下载间隔	|DOWNLOAD_INTERVAL	|5	|每轮下载间隔(秒)|
