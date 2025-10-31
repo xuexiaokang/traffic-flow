@@ -13,6 +13,7 @@ TrafficFlow - 流量去哪儿 (刷下行流量小工具，采用python代码，D
 - ⚡ 同步和异步两种版本
 
 ## 项目结构
+```
 traffic-flow/
 ├── Dockerfile
 ├── requirements.txt
@@ -21,7 +22,7 @@ traffic-flow/
 ├── download_async.py (异步版本)
 ├── docker-compose.yml
 └── README.md
-
+```
 ## 版本区别
 
 - **同步版本** (`download_sync.py`): 使用线程池，适合CPU密集型任务
